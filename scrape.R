@@ -13,8 +13,8 @@ source <- "https://www.opendata.nhs.scot/dataset/b318bddf-a4dc-4262-971f-0ba329e
 data <- read.csv(source)
 
 data <- data %>%
-  mutate(date=as.Date(as.character(Date), format="%Y%m%d")) %>%
-  mutate(DateTime = Sys.time()) #add time of scraping
+  mutate(date=as.Date(as.character(Date), format="%Y%m%d"))
+
   
 #Write data to file, new data scraped after automation will be appended
 write.table(data, "data/data.csv", 
